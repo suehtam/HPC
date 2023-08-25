@@ -1,4 +1,6 @@
 import random
+import time
+tempo_inicial = time.time()
 def insertion_sort(lista):
     for i in range(1, len(lista)):
         chave = lista[i]
@@ -10,3 +12,5 @@ def insertion_sort(lista):
     return lista
 entrada = [random.randint(0, 10000) for _ in range(5000)]
 print(insertion_sort(entrada))
+tempo_final = time.time()
+print(f"{tempo_final - tempo_inicial} segundos")

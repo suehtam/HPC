@@ -1,5 +1,7 @@
 import threading
 import random
+import time
+tempo_inicial = time.time()
 def insertion_sort_threaded(lista):
     for i in range(1, len(lista)):
         t = threading.Thread(target=insert, args=(lista, i))
@@ -15,3 +17,5 @@ def insert(lista, i):
     lista[j+1] = chave
 entrada = [random.randint(0, 10000) for _ in range(5000)]
 print(insertion_sort_threaded(entrada))
+tempo_final = time.time()
+print(f"{tempo_final - tempo_inicial} segundos")
